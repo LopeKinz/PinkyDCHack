@@ -2,6 +2,7 @@
 
 Default Decryption Code is 0000
 
+Installation : pip3 install -r requirements.txt
 
 STATUS :
 
