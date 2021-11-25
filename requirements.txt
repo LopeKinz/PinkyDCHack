@@ -1,0 +1,16 @@
+time
+json
+discord
+colorama 
+asyncio
+sys
+logging
+syslog
+random
+os
+tqdm.auto 
+requests
+base64
+re
+urllib.request 
+textwrap
