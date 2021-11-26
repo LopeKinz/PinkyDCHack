@@ -21,7 +21,7 @@ intents.members = True
 bot = discord.Client(prefix="!",intents=intents)
 os.system("clear")
 print(" ")
-print("Pinkyhax Linux Tools!")
+print("V0LT by Pinkyhax")
 print("(Run this tool with root/su)")
 print("Disclaimer: This tool is Against the Discord TOS i am not reponsible for any bans!")
 plattform = sys.platform
@@ -57,7 +57,7 @@ for i in range(toolbar_width):
             sys.stdout.write("]\n")
 
 os.system("clear")
-print("Loading PinkyDCHACK.py..")
+print("Loading V0LT.py..")
  
 
 
@@ -88,7 +88,7 @@ for i in range(toolbar_width):
 menu_main_settings = Style.BRIGHT + f'''
 
 ---------------------------------------------------------------------
-|##################|Pinkyhax Discord Hackmenu|######################|
+|######################|V0LT Discord Hackmenu|######################|
 ---------------------------------------------------------------------
                         [1] Password Settings
 
@@ -101,7 +101,7 @@ menu_main_settings = Style.BRIGHT + f'''
 menu_bot_settings = Style.BRIGHT + f'''
 
 ---------------------------------------------------------------------
-|##################|Pinkyhax Discord Hackmenu|######################|
+|######################|V0LT Discord Hackmenu|######################|
 ---------------------------------------------------------------------
                         [1] Edit Bot Token
                         [2] Set Bot Preference
@@ -279,7 +279,7 @@ async def banall():
 menu_hack_list = Style.BRIGHT + f'''
 
 ---------------------------------------------------------------------
-|##################|Pinkyhax Discord Hackmenu|######################|
+|######################|V0LT Discord Hackmenu|######################|
 ---------------------------------------------------------------------
         [1] Spam     [Available]            [6] Delete Messages [WIP]
         [2] Ban All  [WIP]                  [7] Admin Exploit [WIP]
@@ -300,13 +300,21 @@ menu_hack_list = Style.BRIGHT + f'''
 help_menu = Style.BRIGHT + f'''
 
 ---------------------------------------------------------------------
-|##################|Pinkyhax Discord Hackmenu|######################|
+|######################|V0LT Discord Hackmenu|######################|
 ---------------------------------------------------------------------
-    main |Returns to main menu|
-    hacklist |Shows Hacklist|
-    changelog |Shows Changelog|
-    exit |Closes Programm|
-    help |Shows this Menu|
+                        CLI Commands 
+                    
+                    main |Returns to main menu|
+                    hacklist |Shows Hacklist|
+                    changelog |Shows Changelog|
+                    exit |Closes Programm|
+                    help |Shows this Menu|
+
+                        Discord Commands
+    
+                    Discord Bot Prefix = !
+                        
+                    !bye (user) |Ban specific user|
 
                         Version : 0.0.2
                         Copyright Pinkyhax 2021
@@ -333,6 +341,7 @@ def cli():
             hack_choose()
         if choice == "4":
                 print(changelog())
+                rcli()
         if choice == "cli":
             rcli()
     if cmd == "help":
@@ -377,6 +386,9 @@ def hack_choose():
             print(menu_hack_list)
             hack_choose()
 
+@bot.command()
+async def bye(ctx, member : discord.Member, *, reason = None):
+    await member.ban(reason = reason)
 
 
 async def spam():
@@ -396,14 +408,14 @@ async def spam():
 
 def changelog():
     os.system("clear")
-    changes = ("Version 0.0.1 DEV Beta")
+    changes = ("Version 0.0.2 DEV Beta")
     cli()
     return changes
 
 menu_hacklist_desc = Style.BRIGHT + f'''{Fore.WHITE}
 
 ---------------------------------------------------------------------
-|##################|Pinkyhax Discord Hackmenu|######################|
+|##################|V0LT Discord Hackmenu|######################|
 ---------------------------------------------------------------------{Fore.RESET}
 {Fore.GREEN}1.[Spam] Spams All Channels and all Servers
 2.[Ban all] Ban all user in a Guild
@@ -425,21 +437,21 @@ menu_hacklist_desc = Style.BRIGHT + f'''{Fore.WHITE}
 
 async def status():
     status = input("Type custom Preference: ")
-    print("Preference Set!")
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name =f"{status}"))
     print("Preference Set!")
+    cli()
 
 
 menu_main = Style.BRIGHT + f'''
 
 ---------------------------------------------------------------------
-|##################|Pinkyhax Discord Hackmenu|######################|
+|######################|V0LT Discord Hackmenu|######################|
 ---------------------------------------------------------------------
                         [1] Bot Settings
                         [2] Menu Settings
                         [3] Hack list
                         [4] Changelog
-                        [5] Debug
+                        [5] Bot Commands
 
                         type cli to open console
 
@@ -449,11 +461,43 @@ menu_main = Style.BRIGHT + f'''
 |###################################################################|
 ---------------------------------------------------------------------
 '''
+
+
+menu_main = Style.BRIGHT + f'''
+
+---------------------------------------------------------------------
+|######################|V0LT Discord Hackmenu|######################|
+---------------------------------------------------------------------
+                °V.0.0.1 : 
+                -Added Menus
+                -Added Spam
+                -Added Usertoken Exploit
+                -Fixed Token bug
+                -Fixed Commandline definition
+
+                °V.0.0.2 :
+                -Added Ban Command
+                -Fixed Changelog CLI
+                -Redisigned Changelog
+                -Renamed to V0LT Hack
+                -fixed requirements.txt
+                
+
+
+                        type cli to open console
+
+                        Version : 0.0.2
+                        Copyright Pinkyhax 2021
+---------------------------------------------------------------------
+|###########################|Changelog|#############################|
+---------------------------------------------------------------------
+'''
+
 try:
     os.system("clear")
     with open("password.json","r") as code:
         passw = json.load(code)
-        check = input("PinkyDCHACK is encrypted! Please enter choosen Password : ")
+        check = input("V0LT is encrypted! Please enter choosen Password : ")
         toolbar_width = 100
         os.system("clear")
         print("Decrypting...")
@@ -484,27 +528,31 @@ try:
         os.system("clear")
         if check == passw:
             token = input("Enter Bot Token: ")
-            @bot.event
-            async def on_ready():
-                print(f"Bot Online and ready to hack as{bot.user}")
-                print(discord.__version__)
-                time.sleep(3)
-                os.system("clear")
-                print(menu_main)
-                choice = input("Open Menu: ")
-                if choice == "1":
-                        menu_bot()
-                if choice == "2":
-                        menu_settings()
-                if choice == "3":
-                        os.system("clear")
-                        print(menu_hack_list)
-                        hack_choose()
-                if choice == "4":
-                        print(changelog())
-                if choice == "cli":
-                    cli()
-            bot.run(token)
+            try:
+                @bot.event
+                async def on_ready():
+                    print(f"Bot Online and ready to hack as {bot.user}")
+                    print(discord.__version__)
+                    time.sleep(3)
+                    os.system("clear")
+                    print(menu_main)
+                    choice = input("Open Menu: ")
+                    if choice == "1":
+                            menu_bot()
+                    if choice == "2":
+                            menu_settings()
+                    if choice == "3":
+                            os.system("clear")
+                            print(menu_hack_list)
+                            hack_choose()
+                    if choice == "4":
+                            print(changelog())
+                            cli()
+                    if choice == "cli":
+                        cli()
+                bot.run(token)
+            except:
+                print("Bot Token Invalid")
         else:
             print("Wrong Password! Decryption denied!")
 except:
@@ -515,7 +563,7 @@ except:
     token = input("Enter Bot Token: ")
     @bot.event
     async def on_ready():
-        print(f"Bot Online and ready to hack as{bot.user}")
+        print(f"Bot Online and ready to hack as {bot.user}")
         print(discord.__version__)
         print(menu_main)
         choice = input("Open Menu: ")
@@ -528,9 +576,11 @@ except:
             hack_choose()
         if choice == "4":
             print(changelog())
+            cli()
         if choice == "cli":
             cli()
     bot.run(token)
+
 
    #     ODQ4NTY4MTM1MjkxNTAyNTkz.YLOgqQ.eQy2ow0hUxKiatga--CqaMtgIFw
         
