@@ -340,7 +340,7 @@ def cli():
             print(menu_hack_list)
             hack_choose()
         if choice == "4":
-                print(changelog())
+                print(changelog)
                 rcli()
         if choice == "cli":
             rcli()
@@ -406,11 +406,7 @@ async def spam():
         await chnl.send(msg)
         print(f"Message send in {chnl} {chnl.id}")
 
-def changelog():
-    os.system("clear")
-    changes = ("Version 0.0.2 DEV Beta")
-    cli()
-    return changes
+
 
 menu_hacklist_desc = Style.BRIGHT + f'''{Fore.WHITE}
 
@@ -451,7 +447,6 @@ menu_main = Style.BRIGHT + f'''
                         [2] Menu Settings
                         [3] Hack list
                         [4] Changelog
-                        [5] Bot Commands
 
                         type cli to open console
 
@@ -463,7 +458,7 @@ menu_main = Style.BRIGHT + f'''
 '''
 
 
-menu_main = Style.BRIGHT + f'''
+changelog = Style.BRIGHT + f'''
 
 ---------------------------------------------------------------------
 |######################|V0LT Discord Hackmenu|######################|
@@ -546,7 +541,7 @@ try:
                             print(menu_hack_list)
                             hack_choose()
                     if choice == "4":
-                            print(changelog())
+                            print(changelog)
                             cli()
                     if choice == "cli":
                         cli()
@@ -575,7 +570,7 @@ except:
             print(menu_hack_list)
             hack_choose()
         if choice == "4":
-            print(changelog())
+            print(changelog)
             cli()
         if choice == "cli":
             cli()
