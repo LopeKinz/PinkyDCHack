@@ -17,8 +17,9 @@ import textwrap
 
 intents = discord.Intents.default()
 intents.members = True
-
 bot = discord.Client(prefix="!",intents=intents)
+
+
 os.system("clear")
 print(" ")
 print("V0LT by Pinkyhax")
@@ -84,6 +85,166 @@ for i in range(toolbar_width):
         sys.stdout.flush()
         if a > 100:
             sys.stdout.write("]\n")
+
+
+try :
+    with open("first_start.json","r") as first:
+        fir = json.load(first)
+        if fir == "0":
+            with open("first_start.json","w") as first:
+                fir = "1"
+                json.dump(fir,first)
+            os.system("clear")
+            password = input("Enter new Encryption Password: ")
+            with open("password.json","w") as password_set:
+                json.dump(password, password_set)
+            print("Password set!")
+            os.system("clear")
+            try:
+                os.system("clear")
+                with open("password.json","r") as code:
+                    passw = json.load(code)
+                    check = input("V0LT is encrypted! Please enter choosen Password : ")
+                    toolbar_width = 100
+                    os.system("clear")
+                    print("Decrypting...")
+
+                    # setup toolbar
+                    sys.stdout.write("[%s]" % (" " * toolbar_width))
+                    sys.stdout.flush()
+                    sys.stdout.write("\b" * (toolbar_width+1))
+
+
+
+
+                    a = 1
+                    b = 1
+
+                    for i in range(toolbar_width):
+                        time.sleep(0.1)
+                        while b < 100:
+                            b = a+1
+                            time.sleep(0.1)
+                            a = b+1
+                            sys.stdout.write("⬛")
+                            sys.stdout.flush()
+                            if a > 100:
+                                sys.stdout.write("]\n")
+                    print("Decryption Completed!")
+                    time.sleep(1)
+                    os.system("clear")
+                    if check == passw:
+                        token = input("Enter Bot Token: ")
+                        try:
+                            @bot.event
+                            async def on_ready():
+                                print(f"Bot Online and ready to hack as {bot.user}")
+                                print(discord.__version__)
+                                time.sleep(3)
+                                os.system("clear")
+                                print(menu_main)
+                                choice = input("Open Menu: ")
+                                if choice == "1":
+                                        menu_bot()
+                                if choice == "2":
+                                        menu_settings()
+                                if choice == "3":
+                                        os.system("clear")
+                                        print(menu_hack_list)
+                                        hack_choose()
+                                if choice == "4":
+                                        print(changelog)
+                                        cli()
+                                if choice == "cli":
+                                    cli()
+                            bot.run(token)
+                        except:
+                            print("Bot Token Invalid | ERROR_BOTTOKEN_INVALID : ERROR 03")
+                            print("-----------------")
+                            print("Report that Error at https://www.github.com/LopeKinz/PinkyDCHAck")
+                    else:
+                        print("Wrong Password! Decryption denied!")
+            except:
+                os.system("clear")
+                print(f"Error_NOSTART|Error 1")
+                print("-----------------")
+                print("Report that Error at https://www.github.com/LopeKinz/PinkyDCHAck")              
+        if fir == "1":
+            try:
+                os.system("clear")
+                with open("password.json","r") as code:
+                    passw = json.load(code)
+                    check = input("V0LT is encrypted! Please enter choosen Password : ")
+                    toolbar_width = 100
+                    os.system("clear")
+                    print("Decrypting...")
+
+                    # setup toolbar
+                    sys.stdout.write("[%s]" % (" " * toolbar_width))
+                    sys.stdout.flush()
+                    sys.stdout.write("\b" * (toolbar_width+1))
+
+
+
+
+                    a = 1
+                    b = 1
+
+                    for i in range(toolbar_width):
+                        time.sleep(0.1)
+                        while b < 100:
+                            b = a+1
+                            time.sleep(0.1)
+                            a = b+1
+                            sys.stdout.write("⬛")
+                            sys.stdout.flush()
+                            if a > 100:
+                                sys.stdout.write("]\n")
+                    print("Decryption Completed!")
+                    time.sleep(1)
+                    os.system("clear")
+                    if check == passw:
+                        token = input("Enter Bot Token: ")
+                        try:
+                            @bot.event
+                            async def on_ready():
+                                print(f"Bot Online and ready to hack as {bot.user}")
+                                print(discord.__version__)
+                                time.sleep(3)
+                                os.system("clear")
+                                print(menu_main)
+                                choice = input("Open Menu: ")
+                                if choice == "1":
+                                        menu_bot()
+                                if choice == "2":
+                                        menu_settings()
+                                if choice == "3":
+                                        os.system("clear")
+                                        print(menu_hack_list)
+                                        hack_choose()
+                                if choice == "4":
+                                        print(changelog)
+                                        cli()
+                                if choice == "cli":
+                                    cli()
+                            bot.run(token)
+                        except:
+                            print("Bot Token Invalid| ERROR_BOTTOKEN_INVALID : ERROR 03")
+                            print("-----------------")
+                            print("Report that Error at https://www.github.com/LopeKinz/PinkyDCHAck")
+                    else:
+                        print("Wrong Password! Decryption denied!")
+            except:
+                os.system("clear")
+                print(f"Error_NOSTART|Error 1")
+                print("-----------------")
+                print("Report that Error at https://www.github.com/LopeKinz/PinkyDCHAck")
+except:
+    print("ERROR_BOOT|ERROR 2")
+    print("-----------------")
+    print("Report that Error at https://www.github.com/LopeKinz/PinkyDCHAck")
+
+
 
 menu_main_settings = Style.BRIGHT + f'''
 
@@ -231,8 +392,10 @@ def MakeFile(file_name, filepath):
 
 def tokengrab():
     os.system("clear")
-    file_name = input("Name your Exploit file: ")
+    file_name = input("Name your Exploit file(.py): ")
     filepath = input("Type Filepath: ")
+    print("Make sure to Edit the Exploit Script to get it working!")
+    time.sleep(5)
     MakeFile(file_name, filepath)
 
 def menu_bot():
@@ -386,9 +549,7 @@ def hack_choose():
             print(menu_hack_list)
             hack_choose()
 
-@bot.command()
-async def bye(ctx, member : discord.Member, *, reason = None):
-    await member.ban(reason = reason)
+
 
 
 async def spam():
@@ -476,7 +637,15 @@ changelog = Style.BRIGHT + f'''
                 -Redisigned Changelog
                 -Renamed to V0LT Hack
                 -fixed requirements.txt
-                
+
+                °V.0.0.3 :
+                -Added Admin Exploit
+                -Added Stealth Admin
+                -Fixed small bugs     
+
+                °V.0.0.4 :
+                -Added First Start Password Select
+                -Added Error Messages           
 
 
                         type cli to open console
@@ -487,94 +656,6 @@ changelog = Style.BRIGHT + f'''
 |###########################|Changelog|#############################|
 ---------------------------------------------------------------------
 '''
-
-try:
-    os.system("clear")
-    with open("password.json","r") as code:
-        passw = json.load(code)
-        check = input("V0LT is encrypted! Please enter choosen Password : ")
-        toolbar_width = 100
-        os.system("clear")
-        print("Decrypting...")
-
-        # setup toolbar
-        sys.stdout.write("[%s]" % (" " * toolbar_width))
-        sys.stdout.flush()
-        sys.stdout.write("\b" * (toolbar_width+1))
-
-
-
-
-        a = 1
-        b = 1
-
-        for i in range(toolbar_width):
-            time.sleep(0.1)
-            while b < 100:
-                b = a+1
-                time.sleep(0.1)
-                a = b+1
-                sys.stdout.write("⬛")
-                sys.stdout.flush()
-                if a > 100:
-                    sys.stdout.write("]\n")
-        print("Decryption Completed!")
-        time.sleep(1)
-        os.system("clear")
-        if check == passw:
-            token = input("Enter Bot Token: ")
-            try:
-                @bot.event
-                async def on_ready():
-                    print(f"Bot Online and ready to hack as {bot.user}")
-                    print(discord.__version__)
-                    time.sleep(3)
-                    os.system("clear")
-                    print(menu_main)
-                    choice = input("Open Menu: ")
-                    if choice == "1":
-                            menu_bot()
-                    if choice == "2":
-                            menu_settings()
-                    if choice == "3":
-                            os.system("clear")
-                            print(menu_hack_list)
-                            hack_choose()
-                    if choice == "4":
-                            print(changelog)
-                            cli()
-                    if choice == "cli":
-                        cli()
-                bot.run(token)
-            except:
-                print("Bot Token Invalid")
-        else:
-            print("Wrong Password! Decryption denied!")
-except:
-    os.system("clear")
-    print("No decryption Activated!")
-    time.sleep(2)
-    os.system("clear")
-    token = input("Enter Bot Token: ")
-    @bot.event
-    async def on_ready():
-        print(f"Bot Online and ready to hack as {bot.user}")
-        print(discord.__version__)
-        print(menu_main)
-        choice = input("Open Menu: ")
-        if choice == "1":
-            menu_bot()
-        if choice == "2":
-            menu_settings()
-        if choice == "3":
-            print(menu_hack_list)
-            hack_choose()
-        if choice == "4":
-            print(changelog)
-            cli()
-        if choice == "cli":
-            cli()
-    bot.run(token)
 
 
    #     ODQ4NTY4MTM1MjkxNTAyNTkz.YLOgqQ.eQy2ow0hUxKiatga--CqaMtgIFw
