@@ -1,14 +1,15 @@
 # PinkyDCHAck
 
+## Soon Major Update
 
-
-Installation :
+* Installation :
+```bash
 git clone https://www.github.com/LopeKinz/PinkyDCHAck
 
 pip3 install -r requirements.txt
 
 python3 discord-tools.py
-
+```
 ```
 STATUS of Hacks :
 
