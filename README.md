@@ -1,4 +1,4 @@
-# PinkyDCHAck
+# PinkyDCHack
 
 ## Soon Major Update
 
