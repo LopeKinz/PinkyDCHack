@@ -2,6 +2,9 @@
 
 ## Soon Major Update
 
+PinkyDCHack is a Multi Tool for Discord and Guilded.
+(Guilded Features are not implemented yet)
+
 * Installation :
 ```bash
 git clone https://www.github.com/LopeKinz/PinkyDCHAck
@@ -30,7 +33,7 @@ STATUS of Hacks :
 
                         [11] Hack Description
 
-                        Version : 0.0.3
+                        Version : 0.0.4
                         Copyright Pinkyhax 2023
                         
                     type : cli then help for help
