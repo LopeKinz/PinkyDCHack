@@ -253,8 +253,8 @@ menu_main_settings = Style.BRIGHT + f'''
 ---------------------------------------------------------------------
                         [1] Password Settings
 
-                        Version : 0.0.2
-                        Copyright Pinkyhax 2021
+                        Version : 0.0.4
+                        Copyright Pinkyhax 2023
 ---------------------------------------------------------------------
 |########################|Menu Settings|############################|
 ---------------------------------------------------------------------
@@ -267,8 +267,8 @@ menu_bot_settings = Style.BRIGHT + f'''
                         [1] Edit Bot Token
                         [2] Set Bot Preference
 
-                        Version : 0.0.2
-                        Copyright Pinkyhax 2021
+                        Version : 0.0.4
+                        Copyright Pinkyhax 2023
 ---------------------------------------------------------------------
 |#########################|Bot Settings|############################|
 ---------------------------------------------------------------------
@@ -452,8 +452,8 @@ menu_hack_list = Style.BRIGHT + f'''
 
                         [11] Hack Description
 
-                        Version : 0.0.2
-                        Copyright Pinkyhax 2021
+                        Version : 0.0.4
+                        Copyright Pinkyhax 2023
                         
                     type : cli then help for help
 ---------------------------------------------------------------------
@@ -479,8 +479,8 @@ help_menu = Style.BRIGHT + f'''
                         
                     !bye (user) |Ban specific user|
 
-                        Version : 0.0.2
-                        Copyright Pinkyhax 2021
+                        Version : 0.0.4
+                        Copyright Pinkyhax 2023
 ---------------------------------------------------------------------
 |############################|Commands|#############################|
 ---------------------------------------------------------------------
@@ -585,8 +585,8 @@ menu_hacklist_desc = Style.BRIGHT + f'''{Fore.WHITE}
 {Fore.RESET}{Fore.RED}9.[Ban Server] Spams Graphic Content to ban the server (RISK)
 {Fore.RESET}{Fore.GREEN}10. [Role Spam] Spams any User with random Roles
 {Fore.RESET}{Fore.WHITE}
-                        Version : 0.0.2
-                        Copyright Pinkyhax 2021
+                        Version : 0.0.4
+                        Copyright Pinkyhax 2023
 ---------------------------------------------------------------------
 |########################|Menu Settings|############################|
 ---------------------------------------------------------------------
@@ -611,8 +611,8 @@ menu_main = Style.BRIGHT + f'''
 
                         type cli to open console
 
-                        Version : 0.0.2
-                        Copyright Pinkyhax 2021
+                        Version : 0.0.4
+                        Copyright Pinkyhax 2023
 ---------------------------------------------------------------------
 |###################################################################|
 ---------------------------------------------------------------------
@@ -631,7 +631,7 @@ changelog = Style.BRIGHT + f'''
                 -Fixed Token bug
                 -Fixed Commandline definition
 
-                °V.0.0.2 :
+                °V.0.0.4 :
                 -Added Ban Command
                 -Fixed Changelog CLI
                 -Redisigned Changelog
@@ -650,8 +650,8 @@ changelog = Style.BRIGHT + f'''
 
                         type cli to open console
 
-                        Version : 0.0.2
-                        Copyright Pinkyhax 2021
+                        Version : 0.0.4
+                        Copyright Pinkyhax 2023
 ---------------------------------------------------------------------
 |###########################|Changelog|#############################|
 ---------------------------------------------------------------------
