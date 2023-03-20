@@ -30,8 +30,8 @@ STATUS of Hacks :
 
                         [11] Hack Description
 
-                        Version : 0.0.2
-                        Copyright Pinkyhax 2021
+                        Version : 0.0.3
+                        Copyright Pinkyhax 2023
                         
                     type : cli then help for help
                     
