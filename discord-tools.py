@@ -36,7 +36,7 @@ print("Loading Python encryption..")
 toolbar_width = 100
 
 # setup toolbar
-sys.stdout.write("[%s]" % (" " * toolbar_width))
+sys.stdout.write(f'[{" " * toolbar_width}]')
 sys.stdout.flush()
 sys.stdout.write("\b" * (toolbar_width+1))
 
@@ -46,7 +46,7 @@ sys.stdout.write("\b" * (toolbar_width+1))
 a = 1
 b = 1
 
-for i in range(toolbar_width):
+for _ in range(toolbar_width):
     time.sleep(0.1)
     while b < 100:
         b = a+1
@@ -59,13 +59,13 @@ for i in range(toolbar_width):
 
 os.system("clear")
 print("Loading V0LT.py..")
- 
+
 
 
 toolbar_width = 100
 
 # setup toolbar
-sys.stdout.write("[%s]" % (" " * toolbar_width))
+sys.stdout.write(f'[{" " * toolbar_width}]')
 sys.stdout.flush()
 sys.stdout.write("\b" * (toolbar_width+1))
 
@@ -75,7 +75,7 @@ sys.stdout.write("\b" * (toolbar_width+1))
 a = 1
 b = 1
 
-for i in range(toolbar_width):
+for _ in range(toolbar_width):
     time.sleep(0.1)
     while b < 100:
         b = a+1
@@ -241,12 +241,12 @@ try :
                 print("Report that Error at https://www.github.com/LopeKinz/PinkyDCHAck")
 except:
     print("ERROR_BOOT|ERROR 2")
-    print("-----------------")
-    print("Report that Error at https://www.github.com/LopeKinz/PinkyDCHAck")
+print("-----------------")
+print("Report that Error at https://www.github.com/LopeKinz/PinkyDCHAck")
 
 
 
-menu_main_settings = Style.BRIGHT + f'''
+menu_main_settings = f'''{Style.BRIGHT}
 
 ---------------------------------------------------------------------
 |######################|V0LT Discord Hackmenu|######################|
@@ -259,7 +259,7 @@ menu_main_settings = Style.BRIGHT + f'''
 |########################|Menu Settings|############################|
 ---------------------------------------------------------------------
 '''
-menu_bot_settings = Style.BRIGHT + f'''
+menu_bot_settings = f'''{Style.BRIGHT}
 
 ---------------------------------------------------------------------
 |######################|V0LT Discord Hackmenu|######################|
@@ -407,7 +407,7 @@ def menu_bot():
         try:
             with open("config.json","r") as bot_settings:
                 token = json.load(bot_settings)
-                print(f"Current token:",token,":   To edit go to config.json!")
+                print("Current token:", token, ":   To edit go to config.json!")
                 print("Restart Script to Return!")
         except:
             print("No Bot Token found...")
@@ -439,7 +439,7 @@ async def banall():
             print("Sent all the server a DM.")
 
 
-menu_hack_list = Style.BRIGHT + f'''
+menu_hack_list = f'''{Style.BRIGHT}
 
 ---------------------------------------------------------------------
 |######################|V0LT Discord Hackmenu|######################|
@@ -460,7 +460,7 @@ menu_hack_list = Style.BRIGHT + f'''
 |###########################|Hack List|#############################|
 ---------------------------------------------------------------------
 '''
-help_menu = Style.BRIGHT + f'''
+help_menu = f'''{Style.BRIGHT}
 
 ---------------------------------------------------------------------
 |######################|V0LT Discord Hackmenu|######################|
@@ -557,9 +557,11 @@ async def spam():
     print("Fetching all Servers and all Channels...")
     text_channel_list = []
     for guild in bot.guilds:
-        for channel in guild.channels:
-            if str(channel.type) == 'text':
-                text_channel_list.append(channel)
+        text_channel_list.extend(
+            channel
+            for channel in guild.channels
+            if str(channel.type) == 'text'
+        )
     print("Press CTRL+C to Exit")
     msg = input("Enter Message to spam: ")
     while True:
@@ -569,7 +571,7 @@ async def spam():
 
 
 
-menu_hacklist_desc = Style.BRIGHT + f'''{Fore.WHITE}
+menu_hacklist_desc = f'''{Style.BRIGHT}{Fore.WHITE}
 
 ---------------------------------------------------------------------
 |##################|V0LT Discord Hackmenu|######################|
@@ -599,7 +601,7 @@ async def status():
     cli()
 
 
-menu_main = Style.BRIGHT + f'''
+menu_main = f'''{Style.BRIGHT}
 
 ---------------------------------------------------------------------
 |######################|V0LT Discord Hackmenu|######################|
@@ -619,7 +621,7 @@ menu_main = Style.BRIGHT + f'''
 '''
 
 
-changelog = Style.BRIGHT + f'''
+changelog = f'''{Style.BRIGHT}
 
 ---------------------------------------------------------------------
 |######################|V0LT Discord Hackmenu|######################|
